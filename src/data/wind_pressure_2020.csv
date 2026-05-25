@@ -1,0 +1,681 @@
+Location,1/10,1/50
+100 Mile House,0.27,0.35
+Abbotsford,0.33,0.44
+Agassiz,0.35,0.47
+Alberni,0.24,0.32
+Ashcroft,0.29,0.38
+Bamfield,0.38,0.50
+Beatton River,0.23,0.30
+Bella Bella,0.40,0.50
+Bella Coola,0.29,0.39
+Burns Lake,0.29,0.39
+Cache Creek,0.29,0.39
+Campbell River,0.41,0.48
+Carmi,0.29,0.38
+Castlegar,0.26,0.34
+Chetwynd,0.30,0.40
+Chilliwack,0.35,0.47
+Comox,0.41,0.48
+Courtenay,0.41,0.48
+Cranbrook,0.25,0.33
+Crescent Valley,0.25,0.33
+Crofton,0.32,0.40
+Dawson Creek,0.30,0.40
+Dease Lake,0.23,0.30
+Dog Creek,0.27,0.35
+Duncan,0.31,0.39
+Elko,0.30,0.40
+Fernie,0.30,0.40
+Fort Nelson,0.23,0.30
+Fort St. John,0.29,0.39
+Glacier,0.24,0.32
+Golden,0.26,0.35
+Gold River,0.24,0.32
+Grand Forks,0.30,0.40
+Greenwood,0.30,0.40
+Hope,0.47,0.63
+Jordan River,0.44,0.55
+Kamloops,0.30,0.40
+Kaslo,0.23,0.31
+Kelowna,0.30,0.40
+Kimberley,0.25,0.33
+Kitimat Plant,0.36,0.48
+Kitimat Townsite,0.36,0.48
+Ladysmith,0.32,0.40
+Langford,0.32,0.40
+Lillooet,0.33,0.44
+Lytton,0.32,0.43
+Mackenzie,0.25,0.32
+Masset,0.50,0.61
+McBride,0.27,0.35
+McLeod Lake,0.25,0.32
+Merritt,0.33,0.44
+Mission City,0.32,0.43
+Montrose,0.26,0.35
+Nakusp,0.25,0.33
+Nanaimo,0.38,0.48
+Nelson,0.25,0.33
+Ocean Falls,0.44,0.59
+Osoyoos,0.30,0.40
+Parksville,0.40,0.48
+Penticton,0.30,0.40
+Port Alberni,0.24,0.32
+Port Alice,0.24,0.32
+Port Hardy,0.36,0.48
+Port McNeill,0.36,0.48
+Port Renfrew,0.42,0.52
+Powell River,0.39,0.48
+Prince George,0.28,0.37
+Prince Rupert,0.43,0.54
+Princeton,0.27,0.36
+Qualicum Beach,0.41,0.48
+Queen Charlotte City,0.50,0.61
+Quesnel,0.24,0.31
+Revelstoke,0.24,0.32
+Salmon Arm,0.29,0.39
+Sandspit,0.59,0.72
+Sechelt,0.38,0.48
+Sidney,0.34,0.42
+Smithers,0.30,0.40
+Smith River,0.24,0.30
+Sooke,0.38,0.48
+Squamish,0.38,0.50
+Stewart,0.27,0.36
+Tahsis,0.26,0.34
+Taylor,0.30,0.40
+Terrace,0.27,0.36
+Tofino,0.51,0.68
+Trail,0.26,0.35
+Ucluelet,0.51,0.68
+Burnaby (Simon Fraser Univ.),0.35,0.47
+Cloverdale,0.33,0.44
+Haney,0.33,0.44
+Ladner,0.37,0.46
+Langley,0.33,0.44
+New Westminster,0.33,0.44
+North Vancouver,0.34,0.45
+Richmond,0.36,0.45
+Surrey (88 Ave & 156 St.),0.33,0.44
+Vancouver (City Hall),0.34,0.45
+Vancouver (Granville St. & 41st Ave),0.36,0.45
+West Vancouver,0.36,0.48
+Vernon,0.30,0.40
+Victoria,0.46,0.57
+Victoria (Gonzales Hts),0.46,0.57
+Victoria(Mt Tolmie),0.46,0.57
+Whistler,0.24,0.32
+White Rock,0.33,0.44
+Williams Lake,0.27,0.35
+Youbou,0.26,0.32
+Athabasca,0.27,0.36
+Banff,0.26,0.32
+Barrhead,0.35,0.44
+Beaverlodge,0.27,0.36
+Brooks,0.35,0.44
+Calgary,0.38,0.48
+Campsie,0.33,0.44
+Camrose,0.31,0.39
+Canmore,0.30,0.37
+Cardston,0.58,0.72
+Claresholm,0.46,0.58
+Cold Lake,0.29,0.38
+Coleman,0.50,0.63
+Coronation,0.30,0.37
+Cowley,0.81,1.01
+Drumheller,0.35,0.44
+Edmonton,0.36,0.45
+Edson,0.37,0.46
+Embarras Portage,0.28,0.37
+Fairview,0.26,0.35
+Fort MacLeod,0.54,0.68
+Fort McMurray,0.28,0.35
+Fort Saskatchewan,0.34,0.43
+Fort Vermilion,0.23,0.30
+Grande Prairie,0.32,0.43
+Habay,0.23,0.30
+Hardisty,0.29,0.36
+High River,0.52,0.65
+Hinton,0.37,0.46
+Jasper,0.26,0.32
+Keg River,0.23,0.30
+Lac La Biche,0.27,0.36
+Lacombe,0.32,0.40
+Lethbridge,0.53,0.66
+Manning,0.23,0.30
+Medicine Hat,0.38,0.48
+Peace River,0.24,0.32
+Pincher Creek,0.77,0.96
+Ranfurly,0.29,0.36
+Red Deer,0.32,0.40
+Rocky Mountain House,0.29,0.36
+Slave Lake,0.28,0.37
+Stettler,0.29,0.36
+Stony Plain,0.36,0.45
+Suffield,0.39,0.49
+Taber,0.50,0.63
+Turner Valley,0.52,0.65
+Valleyview,0.34,0.42
+Vegreville,0.29,0.36
+Vermilion,0.29,0.36
+Wagner,0.28,0.37
+Wainwright,0.29,0.36
+Wetaskiwin,0.31,0.39
+Whitecourt,0.28,0.37
+Wimborne,0.32,0.40
+Assiniboia,0.39,0.49
+Battrum,0.43,0.54
+Biggar,0.36,0.45
+Broadview,0.36,0.46
+Dafoe,0.29,0.37
+Dundurn,0.36,0.46
+Estevan,0.41,0.52
+Hudson Bay,0.29,0.37
+Humboldt,0.31,0.39
+Island Falls,0.26,0.35
+Kamsack,0.32,0.40
+Kindersley,0.36,0.46
+Lloydminster,0.32,0.40
+Maple Creek,0.36,0.45
+Meadow Lake,0.30,0.40
+Melfort,0.28,0.36
+Melville,0.32,0.40
+Moose Jaw,0.41,0.52
+Nipawin,0.30,0.38
+North Battleford,0.36,0.46
+Prince Albert,0.30,0.38
+Qu'Appelle,0.33,0.42
+Regina,0.39,0.49
+Rosetown,0.39,0.49
+Saskatoon,0.36,0.46
+Scott,0.36,0.45
+Strasbourg,0.33,0.42
+Swift Current,0.43,0.54
+Uranium City,0.27,0.36
+Weyburn,0.38,0.48
+Yorkton,0.32,0.40
+Beausejour,0.32,0.41
+Boissevain,0.41,0.52
+Brandon,0.39,0.49
+Churchill,0.43,0.55
+Dauphin,0.32,0.40
+Flin Flon,0.28,0.35
+Gimli,0.32,0.40
+Island Lake,0.29,0.37
+Lac du Bonnet,0.29,0.37
+Lynn Lake,0.29,0.37
+Morden,0.41,0.52
+Neepawa,0.35,0.44
+Pine Falls,0.31,0.39
+Portage la Prairie,0.36,0.46
+Rivers,0.36,0.46
+Sandilands,0.32,0.40
+Selkirk,0.32,0.41
+Split Lake,0.31,0.39
+Steinbach,0.32,0.40
+Swan River,0.28,0.35
+The Pas,0.29,0.37
+Thompson,0.28,0.36
+Virden,0.36,0.46
+Winnipeg,0.36,0.45
+Ailsa Craig,0.37,0.48
+Ajax,0.37,0.48
+Alexandria,0.31,0.40
+Alliston,0.28,0.36
+Almonte,0.32,0.41
+Armstrong,0.22,0.30
+Arnprior,0.29,0.37
+Atikokan,0.22,0.30
+Attawapiskat,0.30,0.41
+Aurora,0.34,0.44
+Bancroft,0.25,0.32
+Barrie,0.28,0.36
+Barriefield,0.37,0.47
+Beaverton,0.28,0.36
+Belleville,0.34,0.43
+Belmont,0.37,0.47
+Borden (CFB),0.28,0.36
+Bracebridge,0.27,0.35
+Bradford,0.28,0.36
+Brampton,0.34,0.44
+Brantford,0.33,0.42
+Brighton,0.37,0.48
+Brockville,0.34,0.44
+Burk's Falls,0.27,0.35
+Burlington,0.36,0.46
+Cambridge,0.28,0.36
+Campbellford,0.32,0.41
+Cannington,0.28,0.36
+Carleton Place,0.32,0.41
+Cavan,0.34,0.44
+Centralia,0.37,0.48
+Chapleau,0.23,0.30
+Chatham,0.34,0.43
+Chesley,0.35,0.45
+Clinton,0.36,0.46
+Coboconk,0.27,0.35
+Cobourg,0.38,0.49
+Cochrane,0.27,0.35
+Colborne,0.38,0.49
+Collingwood,0.30,0.39
+Cornwall,0.32,0.41
+Corunna,0.37,0.47
+Deep River,0.27,0.35
+Deseronto,0.34,0.43
+Dorchester,0.37,0.47
+Dorion,0.29,0.39
+Dresden,0.34,0.43
+Dryden,0.22,0.30
+Dundalk,0.33,0.42
+Dunnville,0.36,0.46
+Durham,0.34,0.44
+Dutton,0.37,0.47
+Earlton,0.35,0.45
+Edison,0.23,0.31
+Elliot Lake,0.30,0.38
+Elmvale,0.28,0.36
+Embro,0.37,0.48
+Englehart,0.32,0.41
+Espanola,0.33,0.42
+Exeter,0.37,0.48
+Fenelon Falls,0.28,0.36
+Fergus,0.28,0.36
+Forest,0.37,0.48
+Fort Erie,0.36,0.46
+Fort Erie (Ridgeway),0.36,0.46
+Fort Frances,0.23,0.31
+Gananoque,0.37,0.47
+Geraldton,0.22,0.30
+Glencoe,0.34,0.43
+Goderich,0.37,0.48
+Gore Bay,0.34,0.44
+Graham,0.22,0.30
+Gravenhurst(Muskoka Airport),0.28,0.36
+Grimsby,0.36,0.46
+Guelph,0.28,0.36
+Guthrie,0.28,0.36
+Haileybury,0.34,0.44
+Haldimand(Caledonia),0.34,0.44
+Haldimand(Hagersville),0.36,0.46
+Haliburton,0.27,0.35
+Halton Hills(Georgetown),0.29,0.37
+Hamilton,0.36,0.46
+Hanover,0.34,0.44
+Hastings,0.32,0.41
+Hawkesbury,0.32,0.41
+Hearst,0.23,0.30
+HoneyHarbour,0.30,0.39
+Hornepayne,0.22,0.30
+Huntsville,0.27,0.35
+Ingersoll,0.37,0.48
+Iroquois Falls,0.29,0.37
+Jellicoe,0.22,0.30
+Kapuskasing,0.24,0.31
+Kemptville,0.32,0.41
+Kenora,0.23,0.31
+Killaloe,0.27,0.35
+Kincardine,0.37,0.48
+Kingston,0.37,0.47
+Kinmount,0.27,0.35
+Kirkland Lake,0.30,0.39
+Kitchener,0.29,0.37
+Kitchenuhmaykoosib /Big Trout Lake,0.31,0.42
+Lakefield,0.30,0.38
+Lansdowne House,0.24,0.32
+Leamington,0.37,0.47
+Lindsay,0.30,0.38
+Lion's Head,0.37,0.48
+Listowel,0.34,0.43
+London,0.37,0.47
+Lucan,0.37,0.48
+Maitland,0.34,0.44
+Markdale,0.32,0.41
+Markham,0.34,0.44
+Martin,0.22,0.30
+Matheson,0.30,0.39
+Mattawa,0.25,0.32
+Midland,0.30,0.39
+Milton,0.34,0.43
+Milverton,0.34,0.43
+Minden,0.27,0.35
+Mississauga,0.34,0.44
+Mississauga (Lester B.Pearson Int'l Airport),0.34,0.44
+Mississauga(Port Credit),0.37,0.48
+Mitchell,0.35,0.45
+Moosonee,0.26,0.35
+Morrisburg,0.32,0.41
+Mount Forest,0.32,0.41
+Nakina,0.22,0.30
+Nanticoke(Jarvis),0.37,0.48
+Nanticoke (Port Dover),0.37,0.48
+Napanee,0.34,0.43
+Newcastle,0.37,0.48
+Newcastle(Bowmanville),0.37,0.48
+New Liskeard,0.34,0.43
+Newmarket,0.30,0.38
+Niagara Falls,0.34,0.43
+North Bay,0.27,0.34
+Norwood,0.32,0.41
+Oakville,0.37,0.47
+Orangeville,0.28,0.36
+Orillia,0.28,0.36
+Oshawa,0.37,0.48
+Ottawa (Barrhaven),0.32,0.41
+Ottawa (City Hall),0.32,0.41
+Ottawa (Kanata),0.32,0.41
+Ottawa (M-C Int'lAirport),0.32,0.41
+Ottawa (Orléans),0.32,0.41
+Owen Sound,0.34,0.44
+Pagwa River,0.22,0.30
+Paris,0.33,0.42
+Parkhill,0.37,0.48
+Parry Sound,0.30,0.39
+Pelham (Fonthill),0.33,0.42
+Pembroke,0.27,0.35
+Penetanguishene,0.30,0.39
+Perth,0.32,0.41
+Petawawa,0.27,0.35
+Peterborough,0.32,0.41
+Petrolia,0.37,0.47
+Pickering(Dunbarton),0.37,0.48
+Picton,0.38,0.49
+Plattsville,0.33,0.42
+Point Alexander,0.27,0.35
+Port Burwell,0.37,0.47
+Port Colborne,0.36,0.46
+Port Elgin,0.37,0.48
+Port Hope,0.37,0.48
+Port Perry,0.34,0.44
+Port Stanley,0.37,0.47
+Prescott,0.34,0.44
+Princeton,0.33,0.42
+Raith,0.22,0.30
+Rayside-Balfour(Chelmsford),0.35,0.45
+Red Lake,0.22,0.30
+Renfrew,0.27,0.35
+Richmond Hill,0.34,0.44
+Rockland,0.31,0.40
+Sarnia,0.37,0.47
+Sault Ste. Marie,0.33,0.44
+Schreiber,0.29,0.39
+Seaforth,0.35,0.45
+Shelburne,0.31,0.40
+Simcoe,0.35,0.45
+Sioux Lookout,0.22,0.30
+Smiths Falls,0.32,0.41
+Smithville,0.33,0.42
+Smooth Rock Falls,0.25,0.32
+Southampton,0.37,0.48
+South River,0.27,0.35
+St. Catharines,0.36,0.46
+St. Marys,0.37,0.47
+St. Thomas,0.37,0.47
+Stirling,0.31,0.40
+Stratford,0.35,0.45
+Strathroy,0.37,0.47
+Sturgeon Falls,0.27,0.35
+Sudbury,0.36,0.46
+Sundridge,0.27,0.35
+Tavistock,0.35,0.45
+Temagami,0.29,0.37
+Thamesford,0.37,0.48
+Thedford,0.37,0.48
+Thunder Bay,0.29,0.39
+Tillsonburg,0.34,0.44
+Timmins,0.27,0.35
+Timmins (Porcupine),0.29,0.37
+Etobicoke,0.34,0.44
+North York,0.34,0.44
+Scarborough,0.37,0.47
+Toronto (City Hall),0.34,0.44
+Trenton,0.37,0.47
+Trout Creek,0.27,0.35
+Uxbridge,0.33,0.42
+Vaughan(Woodbridge),0.34,0.44
+Vittoria,0.37,0.47
+Walkerton,0.36,0.46
+Wallaceburg,0.35,0.45
+Waterloo,0.29,0.37
+Watford,0.37,0.47
+Wawa,0.30,0.39
+Welland,0.34,0.43
+West Lorne,0.37,0.47
+Whitby,0.37,0.48
+Whitby (Brooklin),0.35,0.45
+White River,0.22,0.30
+Wiarton,0.34,0.44
+Windsor,0.37,0.47
+Wingham,0.36,0.46
+Woodstock,0.34,0.44
+Wyoming,0.37,0.47
+Acton Vale,0.27,0.35
+Alma,0.27,0.35
+Amos,0.25,0.32
+Asbestos,0.27,0.35
+Aylmer,0.32,0.41
+Baie-Comeau,0.39,0.50
+Baie-Saint-Paul,0.37,0.48
+Beauport,0.33,0.42
+Bedford,0.29,0.37
+Beloeil,0.29,0.37
+Brome,0.29,0.37
+Brossard,0.34,0.44
+Buckingham,0.31,0.40
+Campbell's Bay,0.25,0.32
+Chambly,0.31,0.40
+Coaticook,0.27,0.35
+Contrecoeur,0.34,0.43
+Cowansville,0.29,0.37
+Deux-Montagnes,0.29,0.37
+Dolbeau,0.27,0.35
+Drummondville,0.27,0.35
+Farnham,0.29,0.37
+Fort-Coulonge,0.25,0.32
+Gagnon,0.30,0.39
+Gaspé,0.37,0.48
+Gatineau,0.32,0.41
+Gracefield,0.25,0.32
+Granby,0.27,0.35
+Harrington Harbour,0.56,0.72
+Havre-Saint-Pierre,0.49,0.63
+Hemmingford,0.31,0.40
+Hull,0.32,0.41
+Iberville,0.32,0.41
+Inukjuak,0.37,0.48
+Joliette,0.28,0.36
+Kuujjuaq,0.47,0.60
+Kuujjuarapik,0.37,0.48
+Lachute,0.31,0.40
+Lac-Mégantic,0.27,0.35
+La Malbaie,0.37,0.48
+La Pocatière,0.39,0.50
+La Tuque,0.27,0.35
+Lennoxville,0.25,0.32
+Léry,0.33,0.42
+Loretteville,0.32,0.41
+Louiseville,0.34,0.43
+Magog,0.27,0.35
+Malartic,0.25,0.32
+Maniwaki,0.24,0.31
+Masson,0.31,0.40
+Matane,0.43,0.55
+Mont-Joli,0.41,0.52
+Mont-Laurier,0.23,0.30
+Montmagny,0.37,0.47
+Beaconsfield,0.33,0.42
+Dorval,0.34,0.44
+Laval,0.33,0.42
+Montréal (City Hall),0.34,0.44
+Montréal-Est,0.34,0.44
+Montréal-Nord,0.33,0.42
+Outremont,0.34,0.44
+Pierrefonds,0.33,0.42
+Sainte-Anne-de- Bellevue,0.33,0.42
+Saint-Lambert,0.34,0.44
+Saint-Laurent,0.34,0.44
+Verdun,0.34,0.44
+Nicolet (Gentilly),0.33,0.42
+Nitchequon,0.29,0.37
+Noranda,0.27,0.35
+Percé,0.49,0.63
+Pincourt,0.33,0.42
+Plessisville,0.27,0.35
+Port-Cartier,0.42,0.54
+Puvirnituq,0.47,0.60
+Ancienne-Lorette,0.32,0.41
+Lévis,0.32,0.41
+Québec,0.32,0.41
+Sainte-Foy,0.32,0.41
+Sillery,0.32,0.41
+Richmond,0.25,0.32
+Rimouski,0.41,0.52
+Rivière-du-Loup,0.39,0.50
+Roberval,0.27,0.35
+Rock Island,0.27,0.35
+Rosemère,0.31,0.40
+Rouyn,0.27,0.35
+Saguenay,0.28,0.36
+Saguenay (Bagotville),0.30,0.38
+Saguenay (Jonquière),0.27,0.35
+Saguenay (Kénogami),0.27,0.35
+Sainte-Agathe des-Monts,0.27,0.35
+Saint-Eustache,0.29,0.37
+Saint-Félicien,0.27,0.35
+Saint-Georges-de Cacouna,0.39,0.50
+Saint-Hubert,0.34,0.44
+Saint-Hubert-de Rivière-du-Loup,0.31,0.40
+Saint-Hyacinthe,0.27,0.35
+Saint-Jean-sur Richelieu,0.32,0.41
+Saint-Jérôme,0.29,0.37
+Saint-Jovite,0.26,0.33
+Saint-Lazare / Hudson,0.33,0.42
+Saint-Nicolas,0.33,0.42
+Salaberry-de Valleyfield,0.33,0.42
+Schefferville,0.33,0.42
+Senneterre,0.25,0.32
+Sept-Îles,0.42,0.54
+Shawinigan,0.27,0.35
+Shawville,0.27,0.35
+Sherbrooke,0.25,0.32
+Sorel,0.34,0.43
+Sutton,0.29,0.37
+Tadoussac,0.41,0.52
+Témiscaming,0.25,0.32
+Terrebonne,0.31,0.40
+Thetford Mines,0.27,0.35
+Thurso,0.31,0.40
+Trois-Rivières,0.34,0.43
+Val-d'Or,0.25,0.32
+Varennes,0.31,0.40
+Verchères,0.34,0.43
+Victoriaville,0.27,0.35
+Ville-Marie,0.31,0.40
+Wakefield,0.27,0.34
+Waterloo,0.27,0.35
+Windsor,0.25,0.32
+Alma,0.37,0.48
+Bathurst,0.37,0.48
+Bo iestown,0.30,0.39
+Campbellton,0.35,0.45
+Edmundston,0.30,0.38
+Fredericton,0.30,0.38
+Gagetown,0.31,0.40
+Grand Falls,0.30,0.38
+Miramichi,0.32,0.41
+Moncton,0.39,0.50
+Oromocto,0.30,0.39
+Sackville,0.38,0.49
+Saint Andrews,0.35,0.45
+Saint John,0.41,0.53
+Shippagan,0.49,0.63
+St. George,0.35,0.45
+St. Stephen,0.33,0.42
+Woodstock,0.29,0.37
+Amherst,0.37,0.48
+Antigonish,0.42,0.54
+Bridgewater,0.43,0.55
+Canso,0.48,0.61
+Debert,0.37,0.48
+Digby,0.43,0.55
+Greenwood (CFB),0.42,0.54
+Dartmouth,0.45,0.58
+Halifax,0.45,0.58
+Kentville,0.42,0.54
+Liverpool,0.48,0.61
+Lockeport,0.47,0.60
+Louisbourg,0.51,0.65
+Lunenburg,0.48,0.61
+New Glasgow,0.43,0.55
+North Sydney,0.46,0.59
+Pictou,0.43,0.55
+Port Hawkesbury,0.48,0.61
+Springhill,0.37,0.48
+Stewiacke,0.39,0.50
+Sydney,0.46,0.59
+Tatamagouche,0.43,0.55
+Truro,0.37,0.48
+Wolfville,0.42,0.54
+Yarmouth,0.44,0.56
+Charlottetown,0.44,0.56
+Sour is,0.45,0.58
+Summerside,0.47,0.60
+Tignish,0.51,0.66
+Argentia,0.59,0.75
+Bonavista,0.66,0.84
+Buchans,0.47,0.60
+Cape Harrison,0.47,0.60
+Cape Race,0.82,1.05
+Channel-Portaux Basques,0.61,0.78
+Corner Brook,0.43,0.55
+Gander,0.47,0.60
+Grand Bank,0.58,0.74
+Grand Falls,0.47,0.60
+Happy Valley-GooseBay,0.33,0.42
+Labrador City,0.31,0.40
+St. Anthony,0.68,0.87
+Stephenville,0.45,0.58
+St. John's,0.61,0.78
+Twin Falls,0.31,0.40
+Wabana,0.59,0.75
+Wabush,0.31,0.40
+Aishihik,0.27,0.38
+Dawson,0.22,0.31
+Destruction Bay,0.42,0.60
+Faro,0.26,0.35
+Haines Junction,0.24,0.34
+Snag,0.22,0.31
+Teslin,0.26,0.34
+Watson La ke,0.26,0.35
+Whitehorse,0.29,0.38
+Aklavik,0.31,0.40
+Behchok ǫ̀ / Rae-Edzo,0.31,0.40
+Echo Bay /Port Radium,0.41,0.53
+Fort Good Hope,0.34,0.44
+Fort McPherson,0.31,0.40
+Fort Providence,0.27,0.35
+Fort Resolution,0.30,0.39
+Fort Simpson,0.30,0.39
+Fort Smith,0.30,0.39
+Hay River,0.27,0.35
+Inuvik,0.31,0.40
+Mould Bay,0.45,0.58
+Norman Wells,0.34,0.44
+Tungsten,0.34,0.44
+Ulukhaktok / Holman,0.67,0.86
+Wrigley,0.30,0.39
+Yellowknife,0.31,0.40
+Alert,0.59,0.75
+Arctic Bay,0.43,0.55
+Arviat,0.45,0.58
+Baker Lake,0.42,0.54
+Eureka,0.43,0.55
+Igluligaarjuk / Chesterfield Inlet,0.44,0.56
+Iqaluit,0.51,0.65
+Iqaluktuuttiaq / Cambridge Bay,0.39,0.50
+Isachsen,0.47,0.6
+Kangiqiniq / Rankin Inlet,0.47,0.6
+Kanngiqtugaapik / Clyde River,0.43,0.55
+Kugluktuk / Coppermine,0.36,0.46
+Nottingham Island,0.61,0.78
+Resolute,0.46,0.59
+Resolution Island,0.96,1.23
+Salliq / Coral Harbour,0.45,0.580
