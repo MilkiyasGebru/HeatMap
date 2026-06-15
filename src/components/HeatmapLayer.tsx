@@ -12,6 +12,12 @@ interface HeatmapLayerProps {
   power?: number;
   /** Pixel step for sampling — lower = sharper but slower (default 4) */
   resolution?: number;
+  /**
+   * CSS blur radius in pixels applied to the whole layer container.
+   * Smooths colour transitions without introducing tile-seam white lines.
+   * Default: 8px — increase for a more painterly look, 0 to disable.
+   */
+  blurRadius?: number;
 }
 
 const DEFAULT_GRADIENT: Record<number, string> = {
@@ -38,14 +44,14 @@ interface GradientStop {
 
 function buildStops(gradient: Record<number, string>): GradientStop[] {
   return Object.entries(gradient)
-    .map(([s, color]) => ({ stop: Number(s), rgb: hexToRgb(color) }))
-    .sort((a, b) => a.stop - b.stop);
+      .map(([s, color]) => ({ stop: Number(s), rgb: hexToRgb(color) }))
+      .sort((a, b) => a.stop - b.stop);
 }
 
 function colorFromValue(
-  v: number,
-  stops: GradientStop[],
-  alpha: number,
+    v: number,
+    stops: GradientStop[],
+    alpha: number,
 ): [number, number, number, number] {
   const clamped = Math.max(0, Math.min(1, v));
   let lo = stops[0];
@@ -70,44 +76,42 @@ function colorFromValue(
   ];
 }
 
-/** Nearest-neighbor interpolation.
- *  Find the closest data point and use its value.
- *  If multiple points are equidistant, take the maximum. */
+/**
+ * True Inverse Distance Weighting interpolation.
+ * Every point contributes, weighted by 1 / distance^power.
+ */
 function idw(
-  lat: number,
-  lng: number,
-  points: HeatmapDataPoint[],
-  _power: number,
+    lat: number,
+    lng: number,
+    points: HeatmapDataPoint[],
+    power: number,
 ): number {
-  let bestDist = Infinity;
-  let bestVal = 0;
+  let weightedSum = 0;
+  let weightTotal = 0;
 
   for (let i = 0; i < points.length; i++) {
     const dLat = lat - points[i].lat;
     const dLng = lng - points[i].long;
     const distSq = dLat * dLat + dLng * dLng;
-    const val = points[i].intensity / 100;
 
-    if (distSq < bestDist - 1e-8) {
-      // Strictly closer — new winner
-      bestDist = distSq;
-      bestVal = val;
-    } else if (distSq < bestDist + 1e-8) {
-      // Tied — take the maximum value
-      bestVal = Math.max(bestVal, val);
-    }
+    if (distSq < 1e-10) return points[i].intensity / 100;
+
+    const w = 1 / Math.pow(distSq, power / 2);
+    weightedSum += w * (points[i].intensity / 100);
+    weightTotal += w;
   }
 
-  return bestVal;
+  return weightTotal === 0 ? 0 : weightedSum / weightTotal;
 }
 
 export default function HeatmapLayer({
-  points,
-  gradient = DEFAULT_GRADIENT,
-  opacity = 0.6,
-  power = 2.5,
-  resolution = 4,
-}: HeatmapLayerProps) {
+                                       points,
+                                       gradient = DEFAULT_GRADIENT,
+                                       opacity = 0.6,
+                                       power = 2.5,
+                                       resolution = 4,
+                                       blurRadius = 8,
+                                     }: HeatmapLayerProps) {
   const map = useMap();
   const layerRef = useRef<L.GridLayer | null>(null);
 
@@ -121,6 +125,9 @@ export default function HeatmapLayer({
         tile.width = size.x;
         tile.height = size.y;
 
+        // No per-tile blur — blur is applied once on the layer container
+        // below, which avoids the white-line seam artifact.
+
         const ctx = tile.getContext('2d');
         if (!ctx) return tile;
 
@@ -130,8 +137,8 @@ export default function HeatmapLayer({
         for (let y = 0; y < size.y; y += resolution) {
           for (let x = 0; x < size.x; x += resolution) {
             const absPoint = L.point(
-              coords.x * size.x + x,
-              coords.y * size.y + y,
+                coords.x * size.x + x,
+                coords.y * size.y + y,
             );
             const ll = map.unproject(absPoint, coords.z);
 
@@ -143,7 +150,7 @@ export default function HeatmapLayer({
             for (let dy = 0; dy < resolution && y + dy < size.y; dy++) {
               for (let dx = 0; dx < resolution && x + dx < size.x; dx++) {
                 const idx = ((y + dy) * size.x + (x + dx)) * 4;
-                buf[idx] = c[0];
+                buf[idx]     = c[0];
                 buf[idx + 1] = c[1];
                 buf[idx + 2] = c[2];
                 buf[idx + 3] = c[3];
@@ -154,6 +161,30 @@ export default function HeatmapLayer({
 
         ctx.putImageData(imgData, 0, 0);
         return tile;
+      },
+
+      // After the layer's container pane is ready, apply blur to the whole
+      // pane element — one filter over all tiles, so no seams appear.
+      onAdd(map: L.Map) {
+        // Call the parent onAdd first
+        (L.GridLayer.prototype).onAdd.call(this, map);
+
+        if (blurRadius > 0) {
+          const pane = this.getPane();
+          if (pane) {
+            pane.style.filter = `blur(${blurRadius}px)`;
+          }
+        }
+      },
+
+      onRemove(map: L.Map) {
+        if (blurRadius > 0) {
+          const pane = this.getPane();
+          if (pane) {
+            pane.style.filter = '';
+          }
+        }
+        (L.GridLayer.prototype).onRemove.call(this, map);
       },
     });
 
@@ -166,7 +197,7 @@ export default function HeatmapLayer({
         layerRef.current = null;
       }
     };
-  }, [map, points, gradient, opacity, power, resolution]);
+  }, [map, points, gradient, opacity, power, resolution, blurRadius]);
 
   return null;
 }
