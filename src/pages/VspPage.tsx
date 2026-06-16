@@ -5,15 +5,23 @@ import SidePanel from '../components/SidePanel';
 import { seismicLocations } from '../data/seismicPoints';
 import calculateVsp from '../utils/calculateVsp';
 import type { HeatmapDataPoint } from '../types/heatmap';
-const GRADIENT: Record<number, string> = {
-  0.0: '#eff3ff',
-  0.2: '#6baed6',
-  0.4: '#fed976',
-  0.6: '#fd8d3c',
-  0.8: '#e31a1c',
-  1.0: '#800026',
-};
+// const GRADIENT: Record<number, string> = {
+//   0.0: '#eff3ff',
+//   0.2: '#6baed6',
+//   0.4: '#fed976',
+//   0.6: '#fd8d3c',
+//   0.8: '#e31a1c',
+//   1.0: '#800026',
+// };
 
+const GRADIENT: Record<number, string> = {
+  0.0: '#0000ff', // Deep Blue
+  0.2: '#00ffff', // Cyan
+  0.4: '#00ff00', // Green
+  0.6: '#ffff00', // Yellow
+  0.8: '#ff8000', // Orange
+  1.0: '#ff0000', // Red
+};
 function computeData(ie: number, wp: number) {
   const values = seismicLocations.map((loc) => ({
     lat: loc.lat,
