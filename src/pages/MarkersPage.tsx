@@ -12,10 +12,13 @@ export default function MarkersPage() {
   return (
     <div className="page-layout">
       <div className="map-section">
-        <BaseMap showCapitals={false}>
-          {seismicLocations.map((loc) => (
+        <BaseMap
+          showCapitals={false}
+          legendItems={[{ label: 'Seismic station locations', symbol: 'dot', color: '#d32f2f' }]}
+        >
+          {seismicLocations.map((loc, i) => (
             <CircleMarker
-              key={`${loc.lat}-${loc.long}`}
+              key={`${loc.location}-${loc.lat}-${loc.long}-${i}`}
               center={[loc.lat, loc.long]}
               radius={4}
               pathOptions={{
