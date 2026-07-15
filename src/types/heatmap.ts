@@ -33,3 +33,11 @@ export interface AviationLocation {
   lat: number;
   long: number;
 }
+
+export interface WindLocation {
+  location: string;
+  lat: number;
+  long: number;
+  y10: number;
+  y50: number;
+}

@@ -7,6 +7,7 @@ const links = [
   { to: '/markers', label: 'City Locations' },
     {to: '/custom', label: 'Custom Values' },
     { to: '/aviation', label: 'Aviation' },
+    { to: '/wind', label: 'Wind Speed' },
 ];
 
 export default function Navigation() {
