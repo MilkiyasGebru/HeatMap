@@ -18,9 +18,11 @@ export default function CanadaMask() {
   return (
     <GeoJSON
       data={maskData}
+      // No fill: this layer sits in Leaflet's overlayPane, which stacks
+      // above the heatmap's tilePane. A solid fill here would hide the
+      // heatmap/markers underneath — we only want the boundary outline.
       style={{
-        fillColor: '#ffffff',
-        fillOpacity: 1,
+        fillOpacity: 0,
         color: '#6b7280',
         weight: 1.5,
         opacity: 0.5,

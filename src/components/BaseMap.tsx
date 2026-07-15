@@ -3,6 +3,7 @@ import CanadaMask from './CanadaMask';
 import CapitalCities from './CapitalCities';
 import NorthArrow from './NorthArrow';
 import StationLegend, { type StationLegendItem } from './StationLegend';
+import PanBoundsGuard from './PanBoundsGuard';
 import type { ReactNode } from 'react';
 import type { LatLngBoundsExpression } from 'leaflet';
 import { CANADA_CRS, CANADA_MIN_ZOOM, CANADA_MAX_ZOOM } from '../utils/canadaCRS';
@@ -39,14 +40,13 @@ export default function BaseMap({
       boundsOptions={{ padding: [20, 20] }}
       minZoom={CANADA_MIN_ZOOM}
       maxZoom={CANADA_MAX_ZOOM}
-      maxBounds={CANADA_BOUNDS}
-      maxBoundsViscosity={1.0}
       style={{ width: '100%', height: '100%', background: '#ffffff' }}
       scrollWheelZoom
     >
       {children}
       <CanadaMask />
       {showCapitals && <CapitalCities />}
+      <PanBoundsGuard />
       <NorthArrow />
       <StationLegend items={items} />
       <ScaleControl position="bottomleft" metric imperial={false} />
