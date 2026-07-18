@@ -25,7 +25,7 @@ function computeData() {
 }
 
 export default function CustomPage() {
-    const { points, maxValue, minValue } = useMemo(computeData, []);
+    const { points, maxValue, minValue } = useMemo(() => computeData(), []);
 
     return (
         <div className="page-layout">
