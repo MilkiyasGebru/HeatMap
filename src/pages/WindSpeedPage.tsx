@@ -41,18 +41,16 @@ const DATASETS: Record<
 
 // Fixed value scale shared by all 8 dataset/return-period combinations so
 // colours and cutoffs line up when comparing maps against each other.
-const SCALE_MIN = 10;
-const SCALE_MAX = 60;
-
+const SCALE_MIN = 20;
+const SCALE_MAX = 25;
 const GRADIENT: Record<number, string> = {
-  0.0: '#e0f2ff',
-  0.2: '#7ec8e3',
-  0.4: '#f7e463',
-  0.6: '#f5a623',
-  0.8: '#e04040',
-  1.0: '#8b0000',
+  0.0: '#0000ff', // Deep Blue
+  0.2: '#00ffff', // Cyan
+  0.4: '#00ff00', // Green
+  0.6: '#ffff00', // Yellow
+  0.8: '#ff8000', // Orange
+  1.0: '#ff0000', // Red
 };
-
 function computeData(dataset: DatasetKey, period: ReturnPeriod) {
   const locations = DATASETS[dataset].locations;
   const points: HeatmapDataPoint[] = locations.map((loc) => {
