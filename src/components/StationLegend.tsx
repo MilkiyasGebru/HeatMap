@@ -1,6 +1,6 @@
 export interface StationLegendItem {
   label: string;
-  symbol: 'dot' | 'square' | 'ring';
+  symbol: 'dot' | 'ring';
   color?: string;
 }
 

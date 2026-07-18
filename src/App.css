@@ -395,7 +395,3 @@
 .map-station-legend-symbol--ring {
   border-radius: 50%;
 }
-
-.map-station-legend-symbol--square {
-  border-radius: 1px;
-}

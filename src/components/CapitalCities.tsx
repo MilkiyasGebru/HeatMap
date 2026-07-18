@@ -1,5 +1,4 @@
-import { Rectangle, Tooltip } from 'react-leaflet';
-import type { LatLngBoundsExpression } from 'leaflet';
+import { CircleMarker, Tooltip } from 'react-leaflet';
 
 const CAPITALS = [
   { name: 'Whitehorse', lat: 60.7216, long: -135.0549 },
@@ -20,26 +19,14 @@ const CAPITALS = [
   { name: 'Iqaluit', lat: 63.7467, long: -68.5170 },
 ];
 
-const DOT_SIZE = 0.35; // degrees — visible at zoom 3
-
-function squareBounds(
-  lat: number,
-  lng: number,
-): LatLngBoundsExpression {
-  const h = DOT_SIZE / 2;
-  return [
-    [lat - h, lng - h],
-    [lat + h, lng + h],
-  ];
-}
-
 export default function CapitalCities() {
   return (
     <>
       {CAPITALS.map((c) => (
-        <Rectangle
+        <CircleMarker
           key={c.name}
-          bounds={squareBounds(c.lat, c.long)}
+          center={[c.lat, c.long]}
+          radius={4}
           pathOptions={{
             color: '#1a1a1a',
             weight: 1.5,
@@ -56,7 +43,7 @@ export default function CapitalCities() {
           >
             {c.name}
           </Tooltip>
-        </Rectangle>
+        </CircleMarker>
       ))}
     </>
   );

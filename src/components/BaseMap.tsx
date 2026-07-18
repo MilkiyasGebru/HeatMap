@@ -1,5 +1,6 @@
 import { MapContainer, ScaleControl } from 'react-leaflet';
 import CanadaMask from './CanadaMask';
+import ProvinceBorders from './ProvinceBorders';
 import CapitalCities from './CapitalCities';
 import NorthArrow from './NorthArrow';
 import StationLegend, { type StationLegendItem } from './StationLegend';
@@ -16,7 +17,7 @@ const CANADA_BOUNDS: LatLngBoundsExpression = [
 
 const CAPITAL_LEGEND_ITEM: StationLegendItem = {
   label: 'Capital city',
-  symbol: 'square',
+  symbol: 'dot',
   color: '#1a1a1a',
 };
 
@@ -44,6 +45,7 @@ export default function BaseMap({
       scrollWheelZoom
     >
       {children}
+      <ProvinceBorders />
       <CanadaMask />
       {showCapitals && <CapitalCities />}
       <PanBoundsGuard />
