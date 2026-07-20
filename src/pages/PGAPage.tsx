@@ -58,7 +58,7 @@ function computeData() {
 const LEGEND_TICKS = [0, 0.05, 0.1, 0.2, 0.4, 0.8, 2.0, 4.0];
 
 export default function PGAPage() {
-  const { points, maxPga, minPga } = useMemo(computeData, []);
+  const { points, maxPga, minPga } = useMemo(() => computeData(), []);
 
   return (
     <div className="page-layout">

@@ -316,3 +316,82 @@
   width: 257px !important;
   height: 257px !important;
 }
+
+/* North arrow */
+.map-north-arrow {
+  position: absolute;
+  top: 96px;
+  left: 16px;
+  z-index: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  pointer-events: none;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
+}
+
+.map-north-label {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* Station legend */
+.map-station-legend {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 700;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--outline-variant);
+  border-radius: 6px;
+  padding: 10px 14px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  font-family: var(--font-body);
+  pointer-events: none;
+}
+
+.map-station-legend-title {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--on-surface);
+  margin-bottom: 6px;
+}
+
+.map-station-legend-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.map-station-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--on-surface-variant);
+  white-space: nowrap;
+}
+
+.map-station-legend-symbol {
+  flex-shrink: 0;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid;
+  box-sizing: border-box;
+}
+
+.map-station-legend-symbol--dot {
+  border-radius: 50%;
+}
+
+.map-station-legend-symbol--ring {
+  border-radius: 50%;
+}

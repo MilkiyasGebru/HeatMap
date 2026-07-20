@@ -7,6 +7,7 @@ import MarkersPage from './pages/MarkersPage';
 import './App.css';
 import CustomPage from "./pages/CustomPage.tsx";
 import AviationPage from "./pages/AviationPage.tsx";
+import WindSpeedPage from "./pages/WindSpeedPage.tsx";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/markers" element={<MarkersPage />} />
           <Route path="/custom" element={<CustomPage />} />
           <Route path="/aviation" element={<AviationPage />} />
+          <Route path="/wind" element={<WindSpeedPage />} />
         </Routes>
       </div>
     </BrowserRouter>

@@ -12,10 +12,13 @@ export default function AviationPage() {
     return (
         <div className="page-layout">
             <div className="map-section">
-                <BaseMap showCapitals={false}>
-                    {aviationLocations.map((loc) => (
+                <BaseMap
+                    showCapitals={false}
+                    legendItems={[{ label: 'Station locations', symbol: 'dot', color: '#d32f2f' }]}
+                >
+                    {aviationLocations.map((loc, i) => (
                         <CircleMarker
-                            key={`${loc.lat}-${loc.long}`}
+                            key={`${loc.location}-${loc.lat}-${loc.long}-${i}`}
                             center={[loc.lat, loc.long]}
                             radius={4}
                             pathOptions={{

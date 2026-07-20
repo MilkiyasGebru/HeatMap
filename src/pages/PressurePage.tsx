@@ -25,7 +25,7 @@ function computeData() {
 }
 
 export default function PressurePage() {
-  const { points, maxP, minP } = useMemo(computeData, []);
+  const { points, maxP, minP } = useMemo(() => computeData(), []);
 
   return (
     <div className="page-layout">
