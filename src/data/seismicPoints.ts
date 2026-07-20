@@ -1,6 +1,6 @@
 import type {AviationLocation, SeismicLocation} from '../types/heatmap';
 import csvText from './seismic_data.csv?raw';
-import aviationText from './final_hourly_aviation.csv?raw'
+import aviationText from './filitered_aviation_stations.csv?raw'
 
 function parseCSV(text: string): SeismicLocation[] {
   const lines = text.trim().split('\n');
