@@ -11,31 +11,37 @@ import {
 import type { HeatmapDataPoint, WindLocation } from '../types/heatmap';
 
 type DatasetKey = 'NBC2025' | 'NBC2020' | 'NonThunderstorm' | 'AllIncludingThunderstorm';
-type ReturnPeriod = 10 | 50;
+type ReturnPeriod = 10 | 50 | 500;
+
+const RETURN_PERIODS: ReturnPeriod[] = [10, 50, 500];
 
 const DATASETS: Record<
   DatasetKey,
-  { label: string; description: string; locations: WindLocation[] }
+  { label: string; description: string; locations: WindLocation[]; hasY500: boolean }
 > = {
   NBC2025: {
     label: 'NBC2025',
     description: 'Hourly wind speed per NBC 2025 climatic data.',
     locations: nbc2025WindLocations,
+    hasY500: true,
   },
   NBC2020: {
     label: 'NBC2020',
     description: 'Hourly wind speed per NBC 2020 climatic data.',
     locations: nbc2020WindLocations,
+    hasY500: false,
   },
   AllIncludingThunderstorm: {
     label: 'AllIncludingThunderstorm',
     description: 'Our analysis of hourly wind speed including thunderstorm events.',
     locations: allThunderstormWindLocations,
+    hasY500: true,
   },
   NonThunderstorm: {
     label: 'NonThunderstorm',
     description: 'Our analysis of hourly wind speed excluding thunderstorm events.',
     locations: nonThunderstormWindLocations,
+    hasY500: true,
   },
 };
 
@@ -51,10 +57,18 @@ const GRADIENT: Record<number, string> = {
   0.8: '#ff8000', // Orange
   1.0: '#ff0000', // Red
 };
+function getValue(loc: WindLocation, period: ReturnPeriod): number | undefined {
+  if (period === 10) return loc.y10;
+  if (period === 50) return loc.y50;
+  return loc.y500;
+}
+
 function computeData(dataset: DatasetKey, period: ReturnPeriod) {
-  const locations = DATASETS[dataset].locations;
+  const locations = DATASETS[dataset].locations.filter(
+    (loc) => getValue(loc, period) !== undefined,
+  );
   const points: HeatmapDataPoint[] = locations.map((loc) => {
-    const value = period === 10 ? loc.y10 : loc.y50;
+    const value = getValue(loc, period) as number;
     const clamped = Math.max(SCALE_MIN, Math.min(SCALE_MAX, value));
     return {
       lat: loc.lat,
@@ -62,11 +76,11 @@ function computeData(dataset: DatasetKey, period: ReturnPeriod) {
       intensity: ((clamped - SCALE_MIN) / (SCALE_MAX - SCALE_MIN)) * 100,
     };
   });
-  const values = locations.map((loc) => (period === 10 ? loc.y10 : loc.y50));
+  const values = locations.map((loc) => getValue(loc, period) as number);
   return {
     points,
-    minVal: Math.min(...values),
-    maxVal: Math.max(...values),
+    minVal: values.length ? Math.min(...values) : 0,
+    maxVal: values.length ? Math.max(...values) : 0,
     locationCount: locations.length,
   };
 }
@@ -115,7 +129,13 @@ export default function WindSpeedPage() {
             <select
               id="dataset-select"
               value={dataset}
-              onChange={(e) => setDataset(e.target.value as DatasetKey)}
+              onChange={(e) => {
+                const nextDataset = e.target.value as DatasetKey;
+                if (period === 500 && !DATASETS[nextDataset].hasY500) {
+                  setPeriod(10);
+                }
+                setDataset(nextDataset);
+              }}
             >
               {(Object.keys(DATASETS) as DatasetKey[]).map((key) => (
                 <option key={key} value={key}>
@@ -134,8 +154,13 @@ export default function WindSpeedPage() {
               value={period}
               onChange={(e) => setPeriod(Number(e.target.value) as ReturnPeriod)}
             >
-              <option value={10}>10 year</option>
-              <option value={50}>50 year</option>
+              {RETURN_PERIODS.filter(
+                (p) => p !== 500 || DATASETS[dataset].hasY500,
+              ).map((p) => (
+                <option key={p} value={p}>
+                  {p} year
+                </option>
+              ))}
             </select>
           </div>
         </div>
