@@ -120,7 +120,12 @@ function buildStationCodeResolver() {
   };
 }
 
-function parseCityNameWindCsv(csvText: string, y10Idx: number, y50Idx: number): WindLocation[] {
+function parseCityNameWindCsv(
+  csvText: string,
+  y10Idx: number,
+  y50Idx: number,
+  y500Idx?: number,
+): WindLocation[] {
   const resolve = buildCityNameResolver();
   const results: WindLocation[] = [];
   for (const line of splitCsvLines(csvText).slice(1)) {
@@ -137,6 +142,7 @@ function parseCityNameWindCsv(csvText: string, y10Idx: number, y50Idx: number): 
       long: coords.long,
       y10: parseFloat(parts[y10Idx]),
       y50: parseFloat(parts[y50Idx]),
+      y500: y500Idx !== undefined ? parseFloat(parts[y500Idx]) : undefined,
     });
   }
   return results;
@@ -159,12 +165,18 @@ function parseStationCodeWindCsv(csvText: string): WindLocation[] {
       long: coords.long,
       y10: parseFloat(parts[1]),
       y50: parseFloat(parts[2]),
+      y500: parseFloat(parts[3]),
     });
   }
   return results;
 }
 
-export const nbc2025WindLocations: WindLocation[] = parseCityNameWindCsv(nbc2025CsvText, 1, 2);
+export const nbc2025WindLocations: WindLocation[] = parseCityNameWindCsv(
+  nbc2025CsvText,
+  1,
+  2,
+  3,
+);
 export const nbc2020WindLocations: WindLocation[] = parseCityNameWindCsv(nbc2020CsvText, 1, 2);
 export const allThunderstormWindLocations: WindLocation[] = parseStationCodeWindCsv(allCsvText);
 export const nonThunderstormWindLocations: WindLocation[] =

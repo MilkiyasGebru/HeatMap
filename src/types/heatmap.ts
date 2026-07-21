@@ -40,4 +40,5 @@ export interface WindLocation {
   long: number;
   y10: number;
   y50: number;
+  y500?: number;
 }
