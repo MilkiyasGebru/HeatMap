@@ -1,5 +1,6 @@
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import BaseMap from '../components/BaseMap';
+import DualRangeSlider from '../components/DualRangeSlider';
 import HeatmapLayer from '../components/HeatmapLayer';
 import SidePanel from '../components/SidePanel';
 import {
@@ -45,10 +46,21 @@ const DATASETS: Record<
   },
 };
 
-// Fixed value scale shared by all 8 dataset/return-period combinations so
-// colours and cutoffs line up when comparing maps against each other.
-const SCALE_MIN = 20;
-const SCALE_MAX = 25;
+// Each return period (1/10, 1/50, 1/500) has its own independent gradient
+// scale, adjustable by the user via the double-range slider in the side
+// panel. This keeps colours consistent across datasets for a given return
+// period while letting each period be tuned separately.
+const DEFAULT_SCALE_MIN = 20;
+const DEFAULT_SCALE_MAX = 25;
+
+// Bounds the slider allows for each return period, chosen from the observed
+// min/max hourly wind speed across all datasets for that period.
+const SLIDER_BOUNDS: Record<ReturnPeriod, [number, number]> = {
+  10: [10, 50],
+  50: [10, 60],
+  500: [10, 75],
+};
+
 const GRADIENT: Record<number, string> = {
   0.0: '#0000ff', // Deep Blue
   0.2: '#00ffff', // Cyan
@@ -63,17 +75,23 @@ function getValue(loc: WindLocation, period: ReturnPeriod): number | undefined {
   return loc.y500;
 }
 
-function computeData(dataset: DatasetKey, period: ReturnPeriod) {
+function computeData(
+  dataset: DatasetKey,
+  period: ReturnPeriod,
+  scaleMin: number,
+  scaleMax: number,
+) {
   const locations = DATASETS[dataset].locations.filter(
     (loc) => getValue(loc, period) !== undefined,
   );
+  const scaleRange = scaleMax - scaleMin || 1;
   const points: HeatmapDataPoint[] = locations.map((loc) => {
     const value = getValue(loc, period) as number;
-    const clamped = Math.max(SCALE_MIN, Math.min(SCALE_MAX, value));
+    const clamped = Math.max(scaleMin, Math.min(scaleMax, value));
     return {
       lat: loc.lat,
       long: loc.long,
-      intensity: ((clamped - SCALE_MIN) / (SCALE_MAX - SCALE_MIN)) * 100,
+      intensity: ((clamped - scaleMin) / scaleRange) * 100,
     };
   });
   const values = locations.map((loc) => getValue(loc, period) as number);
@@ -88,10 +106,26 @@ function computeData(dataset: DatasetKey, period: ReturnPeriod) {
 export default function WindSpeedPage() {
   const [dataset, setDataset] = useState<DatasetKey>('NBC2025');
   const [period, setPeriod] = useState<ReturnPeriod>(10);
+  const [scaleRanges, setScaleRanges] = useState<
+    Record<ReturnPeriod, [number, number]>
+  >({
+    10: [DEFAULT_SCALE_MIN, DEFAULT_SCALE_MAX],
+    50: [DEFAULT_SCALE_MIN, DEFAULT_SCALE_MAX],
+    500: [DEFAULT_SCALE_MIN, DEFAULT_SCALE_MAX],
+  });
+
+  const [scaleMin, scaleMax] = scaleRanges[period];
+
+  const handleScaleChange = useCallback(
+    (next: [number, number]) => {
+      setScaleRanges((prev) => ({ ...prev, [period]: next }));
+    },
+    [period],
+  );
 
   const { points, minVal, maxVal, locationCount } = useMemo(
-    () => computeData(dataset, period),
-    [dataset, period],
+    () => computeData(dataset, period, scaleMin, scaleMax),
+    [dataset, period, scaleMin, scaleMax],
   );
 
   return (
@@ -112,10 +146,10 @@ export default function WindSpeedPage() {
         title={`Wind Speed (1/${period})`}
         subtitle={`${period}-year return period hourly wind speed`}
         gradient={GRADIENT}
-        minVal={SCALE_MIN}
-        maxVal={SCALE_MAX}
+        minVal={scaleMin}
+        maxVal={scaleMax}
         unit="m/s"
-        scaleLabel="Wind Speed Scale (fixed across all datasets)"
+        scaleLabel={`Wind Speed Scale — 1/${period} year (fixed across datasets)`}
         description={DATASETS[dataset].description}
         locationCount={locationCount}
       >
@@ -163,6 +197,22 @@ export default function WindSpeedPage() {
               ))}
             </select>
           </div>
+        </div>
+
+        <div className="panel-card">
+          <h3>Gradient Range — 1/{period} year</h3>
+          <div className="param-desc" style={{ marginBottom: 4 }}>
+            Sets the min/max wind speed mapped to the colour scale for this
+            return period. Applies to every dataset shown at 1/{period}.
+          </div>
+          <DualRangeSlider
+            min={SLIDER_BOUNDS[period][0]}
+            max={SLIDER_BOUNDS[period][1]}
+            step={0.5}
+            value={scaleRanges[period]}
+            onChange={handleScaleChange}
+            formatValue={(v) => `${v.toFixed(1)} m/s`}
+          />
         </div>
 
         <div className="panel-card formula-card">
