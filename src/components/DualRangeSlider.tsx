@@ -39,36 +39,43 @@ export default function DualRangeSlider({
   );
 
   return (
-    <div className="dual-range">
-      <div className="dual-range-track">
-        <div
-          className="dual-range-fill"
-          style={{ left: `${loPct}%`, width: `${hiPct - loPct}%` }}
+    <div className="dual-range-wrapper">
+      <div className="dual-range-current">
+        {formatValue(lo)} &ndash; {formatValue(hi)}
+      </div>
+
+      <div className="dual-range">
+        <div className="dual-range-track">
+          <div
+            className="dual-range-fill"
+            style={{ left: `${loPct}%`, width: `${hiPct - loPct}%` }}
+          />
+        </div>
+        <input
+          type="range"
+          className="dual-range-thumb"
+          aria-label="Minimum value"
+          min={min}
+          max={max}
+          step={step}
+          value={lo}
+          onChange={handleLoChange}
+        />
+        <input
+          type="range"
+          className="dual-range-thumb"
+          aria-label="Maximum value"
+          min={min}
+          max={max}
+          step={step}
+          value={hi}
+          onChange={handleHiChange}
         />
       </div>
-      <input
-        type="range"
-        className="dual-range-thumb"
-        aria-label="Minimum value"
-        min={min}
-        max={max}
-        step={step}
-        value={lo}
-        onChange={handleLoChange}
-      />
-      <input
-        type="range"
-        className="dual-range-thumb"
-        aria-label="Maximum value"
-        min={min}
-        max={max}
-        step={step}
-        value={hi}
-        onChange={handleHiChange}
-      />
-      <div className="dual-range-values">
-        <span>{formatValue(lo)}</span>
-        <span>{formatValue(hi)}</span>
+
+      <div className="dual-range-bounds">
+        <span>{formatValue(min)}</span>
+        <span>{formatValue(max)}</span>
       </div>
     </div>
   );
