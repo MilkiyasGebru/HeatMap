@@ -42,6 +42,14 @@ export default function DualRangeSlider({
     onChange([Math.max(min, lo - step), hi]);
   }, [min, lo, hi, step, onChange]);
 
+  const incrementLo = useCallback(() => {
+    onChange([Math.min(hi - step, lo + step), hi]);
+  }, [hi, lo, step, onChange]);
+
+  const decrementHi = useCallback(() => {
+    onChange([lo, Math.max(lo + step, hi - step)]);
+  }, [lo, hi, step, onChange]);
+
   const incrementHi = useCallback(() => {
     onChange([lo, Math.min(max, hi + step)]);
   }, [max, lo, hi, step, onChange]);
@@ -53,15 +61,26 @@ export default function DualRangeSlider({
       </div>
 
       <div className="dual-range-row">
-        <button
-          type="button"
-          className="dual-range-step"
-          aria-label="Decrease minimum value"
-          onClick={decrementLo}
-          disabled={lo <= min}
-        >
-          &minus;
-        </button>
+        <div className="dual-range-stepper">
+          <button
+            type="button"
+            className="dual-range-step"
+            aria-label="Increase minimum value"
+            onClick={incrementLo}
+            disabled={lo >= hi - step}
+          >
+            +
+          </button>
+          <button
+            type="button"
+            className="dual-range-step"
+            aria-label="Decrease minimum value"
+            onClick={decrementLo}
+            disabled={lo <= min}
+          >
+            &minus;
+          </button>
+        </div>
 
         <div className="dual-range">
           <div className="dual-range-track">
@@ -92,15 +111,26 @@ export default function DualRangeSlider({
           />
         </div>
 
-        <button
-          type="button"
-          className="dual-range-step"
-          aria-label="Increase maximum value"
-          onClick={incrementHi}
-          disabled={hi >= max}
-        >
-          +
-        </button>
+        <div className="dual-range-stepper">
+          <button
+            type="button"
+            className="dual-range-step"
+            aria-label="Increase maximum value"
+            onClick={incrementHi}
+            disabled={hi >= max}
+          >
+            +
+          </button>
+          <button
+            type="button"
+            className="dual-range-step"
+            aria-label="Decrease maximum value"
+            onClick={decrementHi}
+            disabled={hi <= lo + step}
+          >
+            &minus;
+          </button>
+        </div>
       </div>
 
       <div className="dual-range-bounds">
